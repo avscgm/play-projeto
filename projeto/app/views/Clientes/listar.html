@@ -1,0 +1,32 @@
+#{extends 'main.html' /}
+#{set title:'Listagem de clientes' /}
+
+
+	<table class="table">
+#{list items:lista, as:'i'}
+	
+	
+	  <thead class="thead-dark">
+	    <tr>
+	      <th scope="col">Opcoes</th>
+	      <th scope="col">Nome</th>
+	      <th scope="col">CPF</th>
+	      <th scope="col">Endereco</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>	
+	      
+	      <a href='@{Clientes.editar(i.id)}'>Editar</a> | 
+		  <a href='@{Clientes.deletar(i.id)}'>Deletar</a>
+		  
+		  </td>
+	      <td>${i.nome}</td>
+	      <td>${i.cpf}</td>
+	      <td>${i.endereco}</td>
+	    </tr>
+
+
+#{/list}
+	</table>

@@ -1,0 +1,18 @@
+#{extends 'main.html' /}
+#{set title:'Formulario' /}
+
+
+<div class="col-12 col-sm-12 col-md-12 col-lg-5 contact-form font-weight-bold">
+    <h4>PREENCHA NOSSO FORMULARIO</h4>
+    <form action="@{Clientes.salvar}" id="contact-form">
+        <div class="form-group">
+        	<input type="hidden" name="clnt.id" value="${clnt?.id}">
+            <input type="text" class="form-control font-weight-bold" id="name" name="clnt.nome" value="${clnt?.nome}" placeholder="Seu Nome" required>
+            <input type="number" class="form-control font-weight-bold" id="cpf" name="clnt.cpf" value="${clnt?.cpf}" placeholder="Seu CPF" required>
+            <input type="number" class="form-control font-weight-bold" id="idade" name="clnt.idade" value="${clnt?.idade}" placeholder="Sua Idade" required>
+        	<input type="text" class="form-control font-weight-bold" id="sexo" name="clnt.sexo" value="${clnt?.sexo}" placeholder="Seu genero" required>
+	        <input type="text" class="form-control font-weight-bold" id="endereco" name="clnt.endereco" placeholder="Endereco" required>
+        </div>
+        <button type="submit" class="btn btn-submit font-weight-bold" name="submit">Enviar</button>
+    </form>
+</div>
